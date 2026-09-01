@@ -22,8 +22,19 @@ const addTour = (newTour) => {
     return newTour;
 }
 
+// delete tour by id 
+
+const deleteTourById = (id) => {
+    const tours = getALL();
+    const index = tours.findIndex(tour => tour.id === id);
+    const updatedTours = tours.filter(tour => tour.id !== id);
+    fs.writeFileSync(filePath, JSON.stringify(updatedTours));
+    return updatedTours;
+}
+
 module.exports = {
     getALL,
     getById,
-    addTour
+    addTour,
+    deleteTourById
 };
