@@ -9,4 +9,5 @@ const tourController = require('../controller/tourcontroller');
 router.get('/tours', tourController.getAllTours);
 router.get('/tours/:id', tourController.getTourById);
 router.post('/tours', tourController.addTour); 
+router.delete('/tours/:id', tourController.deleteTourById);
 module.exports = router;

@@ -20,11 +20,18 @@ const addTour = (req, res) => {
     const addedTour = tourModel.addTour(newTour);
     res.status(201).json(addedTour);
 }
+
+const deleteTourById = (req, res) => {
+    const id = parseInt(req.params.id);
+    const updatedTours = tourModel.deleteTourById(id);
+    res.json({ message: "Tour deleted successfully", tours: updatedTours });
+}
+
 module.exports = {
     getAllTours,
     getTourById,
     addTour,
-    
+    deleteTourById
 };
 // app.get("/", (req, res) => {
 //     res.send("Hello World");
