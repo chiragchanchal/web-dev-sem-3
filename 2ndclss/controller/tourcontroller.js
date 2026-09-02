@@ -21,6 +21,17 @@ const addTour = (req, res) => {
     res.status(201).json(addedTour);
 }
 
+const updateTour= (req, res) => {
+    const id = parseInt(req.params.id);
+    const updatedTourData = req.body;
+    const updatedTour = tourModel.updateTour(id, updatedTourData);
+    if (updatedTour) {
+        res.json(updatedTour);
+    } else {
+        res.status(404).json({ message: "Tour not found" });
+    }
+};
+
 const deleteTourById = (req, res) => {
     const id = parseInt(req.params.id);
     const updatedTours = tourModel.deleteTourById(id);
@@ -31,7 +42,9 @@ module.exports = {
     getAllTours,
     getTourById,
     addTour,
+    updateTour,
     deleteTourById
+    
 };
 // app.get("/", (req, res) => {
 //     res.send("Hello World");
