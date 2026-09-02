@@ -31,7 +31,19 @@ const updateTour= (req, res) => {
         res.status(404).json({ message: "Tour not found" });
     }
 };
-
+ const searchTour = (req, res) => {
+    const destination = req.query.destination;
+    const minPrice = req.query.minPrice ? parseInt(req.query.minPrice) : undefined;
+    const maxPrice = req.query.maxPrice ? parseInt(req.query.maxPrice) : undefined;
+    
+    const tours = tourModel.searchTour(destination, minPrice, maxPrice);
+    
+    if (tours.length === 0) {
+        res.status(404).json({ message: "No tours found matching your criteria" });
+        return;
+    }
+    res.json(tours);
+};
 const deleteTourById = (req, res) => {
     const id = parseInt(req.params.id);
     const updatedTours = tourModel.deleteTourById(id);
@@ -42,6 +54,9 @@ module.exports = {
     getAllTours,
     getTourById,
     addTour,
+    updateTour,
+    searchTour,
+    deleteTourById,
     updateTour,
     deleteTourById
     

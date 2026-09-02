@@ -1,1 +1,47 @@
-[{"id":5,"name":"Tour Package 1","description":"This is the first tour package.","duration":"5 man","image":"tour1.jpg","destination":"Goa"},{"id":2,"name":"Tour Package 2","description":"This is the second tour package.","duration":"5 days","image":"tour2.jpg","destination":"Rome"},{"id":3,"name":"Tour Package 3","description":"This is the third tour package.","duration":"5 days","image":"tour3.jpg","destination":"London"},{"id":5,"name":"Tour Package 1","description":"This is the first tour package.","duration":"5 days","image":"tour1.jpg","destination":"Goa"}]
+[
+  {
+    "id": 1,
+    "name": "Tour Package 1",
+    "description": "This is the first tour package.",
+    "duration": "5 days",
+    "image": "tour1.jpg",
+    "destination": "Goa",
+    "price": 15000
+  },
+  {
+    "id": 2,
+    "name": "Tour Package 2",
+    "description": "This is the second tour package.",
+    "duration": "5 days",
+    "image": "tour2.jpg",
+    "destination": "Rome",
+    "price": 45000
+  },
+  {
+    "id": 3,
+    "name": "Tour Package 3",
+    "description": "This is the third tour package.",
+    "duration": "5 days",
+    "image": "tour3.jpg",
+    "destination": "London",
+    "price": 50000
+  },
+  {
+    "id": 4,
+    "name": "Tour Package 4",
+    "description": "Budget tour package.",
+    "duration": "3 days",
+    "image": "tour4.jpg",
+    "destination": "Goa",
+    "price": 8000
+  },
+  {
+    "id": 5,
+    "name": "Tour Package 5",
+    "description": "Premium tour package.",
+    "duration": "7 days",
+    "image": "tour5.jpg",
+    "destination": "Rome",
+    "price": 65000
+  }
+]

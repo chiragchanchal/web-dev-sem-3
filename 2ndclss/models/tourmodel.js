@@ -32,6 +32,15 @@ const updateTour = (id, updatedTour) => {
     }
     return null;
 }
+const searchTour = (destination, minPrice, maxPrice) => {
+    const tours = getALL();
+    return tours.filter((tour) => {
+        const destinationMatch = destination ? tour.destination.toLowerCase() === destination.toLowerCase() : true;
+        const priceMatch = (minPrice === undefined || tour.price >= minPrice) && 
+                          (maxPrice === undefined || tour.price <= maxPrice);
+        return destinationMatch && priceMatch;
+    });
+}
 
 // delete tour by id 
 
@@ -48,5 +57,6 @@ module.exports = {
     getById,
     addTour,
     updateTour,
+    searchTour,
     deleteTourById
 };
